@@ -230,6 +230,7 @@ article > p {
 }
 // || _-_-_-_-_-_ APP _-_-_-_-_-_ || //
 .app {
+  overflow-x: hidden;
   > section + section {
     margin-block-start: var(--gap-15);
   }
