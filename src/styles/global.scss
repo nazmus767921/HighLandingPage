@@ -33,10 +33,6 @@
   }
 }
 
-#root {
-  min-height: 100%;
-}
-
 :root {
   // || TypoGraphy
   --ff-base: "NeueMachina", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -198,12 +194,16 @@ svg {
 // || Utility classes
 .container {
   margin-inline: auto;
-  width: clamp(36rem, 100vw, 144rem); // Min-width: 360px, Max-width: 1440px
-  padding-inline: clamp(2rem, 5.56vw + 0rem, 8rem);
+  width: clamp(
+    36rem,
+    100vi + 0rem,
+    144rem
+  ); // Min-width: 360px, Max-width: 1440px
+  padding-inline: clamp(1.5rem, 6.02vi + -0.67rem, 8rem);
 
-  @include xl {
+  @include breakpoint(96rem) {
     & {
-      padding-inline: 0; // Above 1440px the padding is set to 0
+      padding-inline: 0;
     }
   }
 }
