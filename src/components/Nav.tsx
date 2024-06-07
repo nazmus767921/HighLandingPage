@@ -2,8 +2,10 @@ import logo from "@assets/Logotype/LogoBlack.png";
 import "@styles/nav.scss";
 import MobileNav from "./shared/MobileNav";
 
+
 const Nav = () => {
   return (
+    
     <nav id="nav" className="navbar container">
       <div className="navbar__logo">
         <img src={logo} alt="brand logo" />

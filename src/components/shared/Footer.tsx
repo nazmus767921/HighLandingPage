@@ -122,7 +122,7 @@ const Footer = () => {
 const Copyright = () => {
   return (
     <p className="copyright">
-      © Designed by The 18 Design. And Developed by{" "}
+      © Designed by The 18 Design. All rights reserved. <br /> And website demo developed by{" "}
       <a
         className="underlined"
         href="https://nazmus.vercel.app"

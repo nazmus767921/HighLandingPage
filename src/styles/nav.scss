@@ -31,12 +31,45 @@
       padding-block: var(--gap-5);
       padding-inline: clamp(1.4rem, 5vw, var(--gap-7));
       cursor: pointer;
+      position: relative;
+
       &:is(:hover, :focus) {
+        &::before,
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+        &::before {
+          transform: rotateZ(-53deg);
+        }
         a {
           opacity: initial;
         }
-        text-shadow: 1px 1px black;
-        text-shadow: -1px -1px black;
+      }
+
+      &::before {
+        content: "";
+        display: flex;
+        position: absolute;
+        inset: 0;
+        background: url("../assets/UIElements/drawn-line.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -2;
+        opacity: 0;
+        visibility: hidden;
+        transform: rotateZ(0);
+      }
+      &::after {
+        content: "";
+        display: flex;
+        position: absolute;
+        inset-inline: 0;
+        inset-block: 0.85em;
+        background-color: var(--white-200);
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
       }
     }
   }
