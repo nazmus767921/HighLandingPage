@@ -59,6 +59,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap-6);
+    min-height: 120vh;
     position: fixed;
     z-index: var(--_z-index);
     inset: 0;
