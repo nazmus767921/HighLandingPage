@@ -8,7 +8,7 @@ const MobileNav = () => {
       <button
         type="button"
         title="Menu"
-        className={`hamburger ${isOpen ? "open" : "closed"}`}
+        className={`hamburger ${isOpen ? "open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       ></button>
       <ul

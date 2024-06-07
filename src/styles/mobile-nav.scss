@@ -15,10 +15,12 @@
     width: var(--_size);
     height: var(--_size);
     aspect-ratio: 1;
-    position: fixed;
+    position: absolute;
     z-index: calc(var(--_z-index) + 1);
     inset: var(--_padding) var(--_padding) auto auto;
-
+    &.open {
+      position: fixed;
+    }
     &::before {
       content: "";
       display: inline-block;
