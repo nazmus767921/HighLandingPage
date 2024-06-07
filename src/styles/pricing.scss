@@ -1,7 +1,13 @@
+@import "./breakpoints";
+
 .home__pricing {
   gap: var(--gap-13);
   &-image {
     width: 60rem;
+    @include md {
+      margin-inline-start: -30rem;
+    }
+    // No need to reset the margin for the larger devices as it's being controlled by a utility class named .image-displacement.
   }
 
   &-content {
@@ -18,9 +24,14 @@
 
   &-prices {
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
-    gap: var(--gap-12);
+    gap: var(--gap-9);
     margin-block-start: var(--gap-13);
+
+    > * {
+      width: 37rem;
+    }
   }
 }

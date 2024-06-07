@@ -52,7 +52,7 @@ const Faq = () => {
           ))}
         </section>
       </article>
-      <div className="home__faq-image">
+      <div className="home__faq-image section-image image-displacement-end-3">
         <img src={sectionImage} alt="illustration" />
       </div>
     </section>

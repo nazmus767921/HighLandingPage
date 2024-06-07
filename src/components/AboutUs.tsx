@@ -23,7 +23,7 @@ const AboutUs = () => {
           <li>Two-factor authentication and SSO</li>
         </ul>
       </article>
-      <div className="home__about-image">
+      <div className="home__about-image section-image image-displacement-start-2">
         <img src={sectionImage} alt="illustration" />
       </div>
     </section>

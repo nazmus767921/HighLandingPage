@@ -53,7 +53,7 @@ const Hero = () => {
           ))}
         </ul>
       </article>
-      <div className="home__hero-image">
+      <div className="home__hero-image image-displacement-end-2">
         <img src={heroImage} alt="hero image" />
       </div>
     </section>

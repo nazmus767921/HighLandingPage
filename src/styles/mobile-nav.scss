@@ -1,0 +1,82 @@
+.mobile-nav {
+  --_z-index: 99;
+  --_padding: var(--navbar-padding-y, 2rem);
+  width: 100%;
+  display: flex;
+
+  .hamburger {
+    --_size: 4rem;
+    --_bar-height: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    width: var(--_size);
+    height: var(--_size);
+    aspect-ratio: 1;
+    position: absolute;
+    z-index: calc(var(--_z-index) + 1);
+    inset: var(--_padding) var(--_padding) auto auto;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: var(--_bar-height);
+      border-radius: 999px;
+      background-color: var(--brand);
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: var(--_bar-height);
+      border-radius: 999px;
+      background-color: var(--brand);
+    }
+    &.open {
+      &::after {
+        transform: translateX(-50%);
+      }
+    }
+
+    &:where(:hover, :focus) {
+      outline: initial;
+    }
+  }
+
+  &__buttons {
+    margin-block-start: var(--gap-8);
+    margin-inline: auto;
+    display: flex;
+  }
+
+  &__menu {
+    background-color: var(--white-200);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-6);
+    position: absolute;
+    z-index: var(--_z-index);
+    inset: 0;
+    padding-block-start: calc(var(--_padding) + 2rem);
+    padding-inline-start: var(--_padding);
+
+    &.closed {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(101%);
+    }
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0%);
+    }
+
+    li {
+      padding: 1rem;
+    }
+  }
+}

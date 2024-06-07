@@ -1,5 +1,6 @@
 import logo from "@assets/Logotype/LogoBlack.png";
 import "@styles/nav.scss";
+import MobileNav from "./shared/MobileNav";
 
 const Nav = () => {
   return (
@@ -7,6 +8,7 @@ const Nav = () => {
       <div className="navbar__logo">
         <img src={logo} alt="brand logo" />
       </div>
+      {/* Menu */}
       <ul className="navbar__menu">
         <li>
           <a href="#">About Us</a>
@@ -21,6 +23,7 @@ const Nav = () => {
           <a href="#">FAQs</a>
         </li>
       </ul>
+      {/* Buttons */}
       <ul className="navbar__buttons">
         <li>
           <button type="button" className="btn">
@@ -33,6 +36,10 @@ const Nav = () => {
           </button>
         </li>
       </ul>
+      {/* Mobile */}
+      <div className="navbar__mobile-menu">
+        <MobileNav />
+      </div>
     </nav>
   );
 };

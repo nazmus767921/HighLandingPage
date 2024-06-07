@@ -79,7 +79,7 @@ const HowItWorks = () => {
               <div className="list-item__icon">
                 <img src={item.icon.src} alt={item.icon.alt} />
               </div>
-              <section>
+              <section className="list-item__content">
                 <h3 className="list-item__title">{item.title}</h3>
                 <p>{item.description}</p>
               </section>
@@ -87,7 +87,7 @@ const HowItWorks = () => {
           ))}
         </ul>
       </article>
-      <div className="home__how-it-works-image">
+      <div className="home__how-it-works-image section-image image-displacement-end-3">
         <img src={sectionImage} alt="illustration" />
       </div>
     </section>

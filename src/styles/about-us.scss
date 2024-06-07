@@ -1,7 +1,7 @@
 .home__about {
   gap: var(--gap-10);
   &-image {
-    width: 60rem;
+    // width: clamp(46rem, 33.65vi + 11.54rem, 60rem);
   }
 
   &-content {

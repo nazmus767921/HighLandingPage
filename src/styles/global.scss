@@ -49,7 +49,7 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
   // || Line Heights
-  --lh-heading: 6rem;
+  --lh-heading: clamp(4.2rem, 1.67vi + 3.6rem, 6rem);
   --lh-base: 2.6rem;
 
   // || Gaps
@@ -199,12 +199,13 @@ svg {
     100vi + 0rem,
     144rem
   ); // Min-width: 360px, Max-width: 1440px
-  padding-inline: clamp(1.5rem, 6.02vi + -0.67rem, 8rem);
+  padding-inline: clamp(1.5rem, 2.56vi + 0.58rem, 3.2rem);
 
-  @include breakpoint(96rem) {
-    & {
-      padding-inline: 0;
-    }
+  @include lg {
+    padding-inline: clamp(3.2rem, 11.54vi + -8.62rem, 8rem);
+  }
+  @include xxxl {
+    padding-inline: 0;
   }
 }
 
@@ -247,4 +248,25 @@ article > p {
 .underlined {
   text-decoration: underline;
   text-underline-offset: 0.4rem;
+}
+.section-image {
+  width: clamp(33rem, 19.58vi + 25.95rem, 46rem);
+  @include lg {
+    width: clamp(46rem, 33.65vi + 11.54rem, 60rem);
+  }
+}
+
+// || _-_-_-_-_-_ Move images to the left or right side of the screen. limited to only 1024p to 1280p _-_-_-_-_-_ || //
+$imageDisplacementSides: start, end;
+@each $side in $imageDisplacementSides {
+  @for $index from 1 through 6 {
+    .image-displacement-#{$side}-#{$index} {
+      @include lg {
+        margin-inline-#{$side}: calc(-3rem * #{$index});
+      }
+      @include xxl {
+        margin-inline-#{$side}: 0;
+      }
+    }
+  }
 }

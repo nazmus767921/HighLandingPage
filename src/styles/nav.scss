@@ -1,13 +1,32 @@
+@import "./breakpoints";
+
 .navbar {
+  --navbar-padding-y: var(--gap-7);
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: var(--gap-7);
-  padding-block: var(--gap-7);
+  padding-block: var(--navbar-padding-y);
+
+  @include lg {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  &__mobile-menu {
+    display: flex;
+    @include lg {
+      display: none;
+    }
+  }
 
   &__menu {
-    display: flex;
+    display: none;
     align-items: center;
     gap: var(--gap-7);
+
+    @include lg {
+      display: flex;
+    }
+
     li {
       padding-block: var(--gap-5);
       padding-inline: clamp(1.4rem, 5vw, var(--gap-7));
@@ -28,7 +47,11 @@
     aspect-ratio: 1;
   }
   &__buttons {
-    display: flex;
+    display: none;
     gap: var(--gap-7);
+
+    @include lg {
+      display: flex;
+    }
   }
 }

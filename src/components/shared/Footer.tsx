@@ -31,17 +31,9 @@ const Footer = () => {
               Get Started
             </button>
           </div>
-          <p className="copyright">
-            © Designed by The 18 Design. And Developed by{" "}
-            <a
-              className="underlined"
-              href="https://nazmus.vercel.app"
-              target="_blank"
-              rel="noopener"
-            >
-              Nazmus.dev
-            </a>
-          </p>
+          <span className="footer__copyright">
+            <Copyright />
+          </span>
         </section>
         {/* Links */}
         <section className="footer__links">
@@ -119,8 +111,27 @@ const Footer = () => {
             </li>
           </ul>
         </section>
+        <span className="footer__copyright-mobile">
+          <Copyright />
+        </span>
       </div>
     </footer>
+  );
+};
+
+const Copyright = () => {
+  return (
+    <p className="copyright">
+      © Designed by The 18 Design. And Developed by{" "}
+      <a
+        className="underlined"
+        href="https://nazmus.vercel.app"
+        target="_blank"
+        rel="noopener"
+      >
+        Nazmus.dev
+      </a>
+    </p>
   );
 };
 export default Footer;

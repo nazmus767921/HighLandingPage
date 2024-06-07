@@ -1,11 +1,32 @@
+@import "./breakpoints";
+
 .footer {
   margin-block-start: var(--gap-13);
   padding-block: var(--gap-12);
   background-color: var(--brand);
   color: var(--white-200);
+  text-align: center;
+
+  @include md {
+    text-align: unset;
+  }
+
+  &__copyright {
+    display: none;
+    @include md {
+      display: block;
+    }
+    &-mobile {
+      display: block;
+      @include md {
+        display: none;
+      }
+    }
+  }
 
   .container {
     display: flex;
+    flex-flow: row wrap;
     gap: var(--gap-12);
   }
 
@@ -16,17 +37,34 @@
 
     .copyright {
       max-width: 23ch;
+      margin-inline: auto;
+
+      @include md {
+        margin-inline: unset;
+      }
     }
   }
 
   &__links {
-    --_columns: 3;
+    --_columns: 1;
+    --_row-gap: var(--gap-12);
+    --_column-gap: 0;
     flex: 1;
     display: grid;
     grid-template-columns: repeat(var(--_columns), 1fr);
-    grid-template-rows: 2fr 1fr;
-    column-gap: var(--gap-8);
-    justify-items: end;
+    grid-auto-rows: auto;
+    gap: var(--_row-gap) var(--_column-gap);
+    justify-items: center;
+    // text-align: center;
+
+    @include md {
+      --_columns: 3;
+      --_row-gap: 0;
+      --_column-gap: var(--gap-8);
+      grid-template-rows: 2fr 1fr;
+      justify-items: end;
+      // text-align: unset;
+    }
 
     .socials {
       display: flex;
@@ -35,10 +73,14 @@
       align-items: flex-end;
       gap: var(--gap-7);
       grid-column: span var(--_columns);
-      justify-self: end;
+      justify-self: center;
+
+      @include md {
+        justify-self: end;
+      }
 
       .social-icon {
-        --_size: 6rem;
+        --_size: 5rem;
         width: var(--_size);
         height: var(--_size);
         aspect-ratio: 1;
@@ -73,11 +115,16 @@
   &__title {
     font-size: var(--fs-h3);
     max-width: 16ch;
+    letter-spacing: -1px;
+
+    @include md {
+      letter-spacing: -3px;
+    }
   }
 
   &-email {
     display: flex;
-    width: 45rem;
+    width: clamp(30rem, 100%, 46rem);
     border: 1px solid var(--white-200);
 
     :first-child {

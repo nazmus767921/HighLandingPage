@@ -1,11 +1,17 @@
 // || _-_-_-_-_-_ Every time you add a new breakpoint, don't forget to make a mixin for it _-_-_-_-_-_ || //
 $breakpoints: (
+  //480px
   sm: "30rem",
+  //768px
   md: "48rem",
+  //1024px
   lg: "64rem",
+  //1280px
   xl: "80rem",
+  //1440px
   xxl: "90rem",
-  xxxl: "120rem",
+  //1920px
+  xxxl: "96rem"
 );
 
 // || _-_-_-_-_-_ Every time you add a new breakpoint, don't forget to make a mixin for it _-_-_-_-_-_ || //
@@ -35,7 +41,7 @@ $breakpoints: (
   }
 }
 @mixin xxxl {
-  @media (min-width: map-get($breakpoints, "xxl")) {
+  @media (min-width: map-get($breakpoints, "xxxl")) {
     @content;
   }
 }

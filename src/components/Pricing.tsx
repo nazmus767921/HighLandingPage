@@ -18,7 +18,7 @@ const Pricing = () => {
             </p>
           </div>
         </article>
-        <div className="home__pricing-image">
+        <div className="home__pricing-image section-image image-displacement-start-2">
           <img src={sectionImage} alt="illustration" />
         </div>
       </header>
