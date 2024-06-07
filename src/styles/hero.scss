@@ -1,0 +1,41 @@
+.home__hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+
+  &-image {
+    flex-basis: 49%;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap-7);
+    flex: 1;
+    padding-block: var(--gap-7);
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-7);
+    }
+
+    .title {
+      font-size: var(--fs-h1);
+      line-height: 8rem;
+    }
+  }
+  &-logos {
+    display: flex;
+    gap: var(--gap-9);
+    margin-block-start: var(--gap-13);
+
+    li {
+      height: 3.6rem;
+      img {
+        width: initial; //resets the global img modifications
+      }
+    }
+  }
+}

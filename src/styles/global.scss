@@ -1,0 +1,250 @@
+@import "breakpoints";
+@import "spacings";
+@import "layout";
+@import "components";
+
+// ||Fonts
+//import local fonts using @font-face
+@font-face {
+  font-family: "NeueMachina";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/font/NeueMachinaRegular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "NeueMachina";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/font/NeueMachinaUltrabold.woff2") format("woff2");
+}
+
+/* Fluid font size variables, for browsers that support clamp */
+/* Fluid font size variables, for browsers that support clamp */
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+  :root {
+    --fs-sm: clamp(1.4rem, 0vi + 1.4rem, 1.4rem);
+    --fs-base: clamp(1.8rem, 0vi + 1.8rem, 1.8rem);
+    --fs-md: clamp(2rem, 0vi + 2rem, 2rem);
+    --fs-xl: clamp(8rem, 0vi + 8rem, 8rem);
+    --fs-h4: clamp(2.8rem, 0vi + 2.8rem, 2.8rem);
+    --fs-h3: clamp(3.2rem, 3.01vi + 2.12rem, 5.2rem);
+    --fs-h2: clamp(4.4rem, 2.41vi + 3.53rem, 6rem);
+    --fs-h1: clamp(5.2rem, 2.71vi + 4.22rem, 7rem);
+  }
+}
+
+#root {
+  min-height: 100%;
+}
+
+:root {
+  // || TypoGraphy
+  --ff-base: "NeueMachina", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  // || Colors
+  --brand: #151515;
+  --white: #fff;
+  --white-200: #f0f0f0;
+
+  // || Border radius
+  --rounded-1: 6px;
+
+  // || Animation Easing
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  // || Line Heights
+  --lh-heading: 6rem;
+  --lh-base: 2.6rem;
+
+  // || Gaps
+  @each $key, $value in $spacings {
+    --gap-#{$key}: #{$value};
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  transition: all 350ms var(--ease-out-expo);
+  -webkit-tap-highlight-color: transparent; /* to remove the tap highlights on touch screens */
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff-base);
+
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 32rem;
+  font-size: var(--fs-base);
+  color: var(--brand);
+  background-color: var(--white-200);
+  overflow-x: hidden; // --fixes for horizontal scrolling
+}
+
+// || custom scrollbar-----------------
+body::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--brand);
+  outline: none;
+}
+// || custom scrollbar------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-base);
+  font-weight: 400;
+  color: inherit;
+  line-height: var(--lh-heading);
+  letter-spacing: -4px;
+}
+
+p {
+  line-height: var(--lh-base);
+}
+
+p.is--sm {
+  font-size: var(--fs-sm);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+  text-decoration: none;
+}
+
+:where(button, a):is(:hover, :focus) {
+  opacity: 0.8;
+}
+:where(button, a):is(:focus) {
+  outline: 1px solid hsl(0, 0%, 30%);
+  border-radius: 0.25rem;
+}
+
+input,
+select,
+textarea {
+  &::placeholder {
+    opacity: 0.6;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+svg,
+picture,
+video {
+  width: 100vw;
+  height: 100%;
+  max-width: 100%;
+  object-position: center;
+}
+
+svg,
+svg g {
+  fill: currentColor;
+}
+svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img__wrapper {
+  // Must be used as an image parent div to get the perfect responsiveness in images.
+  display: flex;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+// || Utility classes
+.container {
+  margin-inline: auto;
+  width: clamp(36rem, 100vw, 144rem); // Min-width: 360px, Max-width: 1440px
+  padding-inline: clamp(2rem, 5.56vw + 0rem, 8rem);
+
+  @include xl {
+    & {
+      padding-inline: 0; // Above 1440px the padding is set to 0
+    }
+  }
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+  content: "";
+}
+
+// || _-_-_-_-_-_ TYPOGRAPHY _-_-_-_-_-_ || //
+
+article {
+  .title {
+    font-size: var(--fs-h2);
+  }
+}
+article > p {
+  max-width: 45ch;
+}
+// || _-_-_-_-_-_ APP _-_-_-_-_-_ || //
+.app {
+  > section + section {
+    margin-block-start: var(--gap-15);
+  }
+}
+// || _-_-_-_-_-_ RESPONSIVENESS _-_-_-_-_-_ || //
+
+@include md {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -3px;
+  }
+}
+
+// || _-_-_-_-_-_ UTILITIES _-_-_-_-_-_ || //
+.underlined {
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}

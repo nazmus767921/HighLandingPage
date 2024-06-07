@@ -1,0 +1,80 @@
+.pricing-card {
+  --_bg: transparent;
+  --_border: var(--brand);
+  --_text: var(--brand);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-13);
+  width: 40rem;
+  border: 2px solid var(--_border);
+  color: var(--_text);
+  background-color: var(--_bg);
+  padding: var(--gap-11);
+
+  // || -_-_-_ VARIANTS _-_-_- || //
+  &.best-choice {
+    --_bg: var(--brand);
+    --_border: var(--_bg);
+    color: var(--white-200);
+
+    .btn {
+      background-color: var(--white-200);
+      color: var(--brand);
+    }
+  }
+  &.second-best {
+    --_bg: var(--white);
+    --_border: var(--_bg);
+    color: var(--brand);
+
+    .btn {
+      background-color: var(--brand);
+      color: var(--white-200);
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-12);
+  }
+  &__badge {
+    --_inset: 1.5rem;
+    font-size: var(--fs-xl);
+    font-weight: 900;
+    position: relative;
+    margin-inline-start: var(--_inset);
+
+    &::before {
+      content: "$";
+      font-size: 2rem;
+      position: absolute;
+      inset-block-start: var(--_inset);
+      inset-inline-start: -0.75em;
+    }
+    &::after {
+      content: "Per " attr(data-price-per);
+      text-transform: capitalize;
+      font-size: 2rem;
+      margin-inline-start: var(--_inset);
+      // position: absolute;
+      // inset-block-start: 0.75em;
+      // inset-inline-start: -0.75em;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-6);
+    li {
+      margin-inline-start: 2rem;
+      list-style: square;
+    }
+  }
+
+  .btn {
+    min-width: 100%;
+  }
+}

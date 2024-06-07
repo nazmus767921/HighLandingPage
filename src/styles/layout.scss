@@ -1,0 +1,24 @@
+.col-2-flex,
+.col-2-flex-reverse {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    flex: 0 1 auto;
+  }
+
+  & > :first-child {
+    flex: 1;
+  }
+}
+.col-2-flex {
+  @include md {
+    flex-direction: row;
+  }
+}
+
+.col-2-flex-reverse {
+  @include md {
+    flex-direction: row-reverse;
+  }
+}

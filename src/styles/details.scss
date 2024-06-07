@@ -1,0 +1,29 @@
+.details {
+  &[open] {
+    & > summary::after {
+      content: "-";
+    }
+  }
+  > summary {
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    font-weight: 900;
+    position: relative;
+
+    &::after {
+      content: "+";
+      font-size: 3rem;
+      line-height: 0;
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-start: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__content {
+    margin-block-start: var(--gap-5);
+    max-width: 90%;
+  }
+}

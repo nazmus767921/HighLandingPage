@@ -1,0 +1,22 @@
+.home__about {
+  gap: var(--gap-10);
+  &-image {
+    width: 60rem;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-10);
+  }
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+    margin-block-start: var(--gap-10);
+    li {
+      margin-inline-start: 2rem;
+      list-style: square;
+    }
+  }
+}

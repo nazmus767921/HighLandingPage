@@ -1,0 +1,59 @@
+@import "breakpoints";
+
+@mixin defaultSpacing {
+  padding-inline: 2rem;
+  padding-block: 1.4rem;
+}
+@mixin defaultTypography {
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+}
+
+.navLink,
+.btn {
+  @include defaultSpacing;
+  @include defaultTypography;
+}
+
+.navLink {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--white);
+  color: var(--brand);
+  text-transform: capitalize;
+
+  &--primary {
+    background-color: var(--brand);
+    color: var(--white-200);
+  }
+}
+
+.meta {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-inline: 2rem;
+  padding-block: 0.6rem;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+  border: 2px solid black;
+
+  text-transform: uppercase;
+  font-weight: 900;
+  height: max-content;
+}
+
+.inputBox {
+  width: clamp(0rem, 100%, 28rem);
+  background-color: var(--white);
+  padding-inline-start: 1.6rem;
+  padding-block: 1.4rem;
+  &::placeholder {
+    color: var(--brand);
+  }
+}

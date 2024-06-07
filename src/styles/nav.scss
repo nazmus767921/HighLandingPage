@@ -1,0 +1,34 @@
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--gap-7);
+  padding-block: var(--gap-7);
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-7);
+    li {
+      padding-block: var(--gap-5);
+      padding-inline: clamp(1.4rem, 5vw, var(--gap-7));
+      cursor: pointer;
+      &:is(:hover, :focus) {
+        a {
+          opacity: initial;
+        }
+        text-shadow: 1px 1px black;
+        text-shadow: -1px -1px black;
+      }
+    }
+  }
+  &__logo {
+    --_size: 5.2rem;
+    width: var(--_size);
+    height: var(--_size);
+    aspect-ratio: 1;
+  }
+  &__buttons {
+    display: flex;
+    gap: var(--gap-7);
+  }
+}
