@@ -4,6 +4,7 @@ import icon2 from "@assets/UIElements/icon_2.svg";
 import icon3 from "@assets/UIElements/icon_3.svg";
 import icon4 from "@assets/UIElements/icon_4.svg";
 import "@styles/how-it-works.scss";
+import { sectionIds } from "src/App";
 
 interface ListItem {
   id: number;
@@ -61,7 +62,7 @@ const list: ListItem[] = [
 const HowItWorks = () => {
   return (
     <section
-      id="home-how-it-works"
+      id={sectionIds.howItWorks}
       className="home__how-it-works container col-2-flex"
     >
       <article className="home__how-it-works-content">

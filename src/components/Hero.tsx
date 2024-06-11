@@ -3,6 +3,7 @@ import masterCard from "@assets/Logotype/m_mastercard.svg";
 import paypal from "@assets/Logotype/m_paypal.svg";
 import visa from "@assets/Logotype/m_visa.svg";
 import "@styles/hero.scss";
+import { sectionIds } from "src/App";
 
 const logos = [
   {
@@ -24,7 +25,7 @@ const logos = [
 
 const Hero = () => {
   return (
-    <section id="home-hero" className="home__hero container">
+    <section id={sectionIds.hero} className="home__hero container">
       <article className="home__hero-content">
         <section className="main-content">
           <h1 className="title">

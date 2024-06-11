@@ -1,9 +1,10 @@
 import sectionImage from "@assets/Illustrations/Illustration_2.svg";
 import "@styles/about-us.scss";
+import { sectionIds } from "src/App";
 
 const AboutUs = () => {
   return (
-    <section id="home-about" className="home__about container col-2-flex-reverse">
+    <section id={sectionIds.aboutUs} className="home__about container col-2-flex-reverse">
       <article className="home__about-content">
         <span className="meta">About Us</span>
         <h2 className="title">

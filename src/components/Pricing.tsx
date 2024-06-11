@@ -1,10 +1,11 @@
 import sectionImage from "@assets/Illustrations/Illustration_4.svg";
 import "@styles/pricing.scss";
+import { sectionIds } from "src/App";
 import PricingCard from "./shared/PricingCard";
 
 const Pricing = () => {
   return (
-    <section id="home-pricing" className="home__pricing container">
+    <section id={sectionIds.pricing} className="home__pricing container">
       <header className="col-2-flex-reverse">
         <article className="home__pricing-content">
           <span className="meta">Pricing</span>

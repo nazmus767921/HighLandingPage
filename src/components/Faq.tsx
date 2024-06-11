@@ -1,5 +1,6 @@
 import sectionImage from "@assets/Illustrations/Illustration_5.svg";
 import "@styles/faq.scss";
+import { sectionIds } from "src/App";
 import Details from "./shared/Details";
 
 interface QuestionAnswer {
@@ -37,7 +38,7 @@ const qa: QuestionAnswer[] = [
 
 const Faq = () => {
   return (
-    <section id="home-faq" className="home__faq container col-2-flex">
+    <section id={sectionIds.faq} className="home__faq container col-2-flex">
       <article className="home__faq-content">
         <span className="meta">FAQs</span>
         <h2 className="title">Common Questions.</h2>
