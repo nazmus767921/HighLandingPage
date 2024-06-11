@@ -1,8 +1,30 @@
 import "@styles/mobile-nav.scss";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { sectionIds } from "src/App";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState<boolean | null>(null);
+  const links = useMemo(
+    () => [
+      {
+        name: "About Us",
+        id: sectionIds.aboutUs,
+      },
+      {
+        name: "How It Works",
+        id: sectionIds.howItWorks,
+      },
+      {
+        name: "Pricing",
+        id: sectionIds.pricing,
+      },
+      {
+        name: "FAQs",
+        id: sectionIds.faq,
+      },
+    ],
+    []
+  );
   return (
     <nav id="mobile-nav" className="mobile-nav">
       <button
@@ -14,18 +36,17 @@ const MobileNav = () => {
       <ul
         className={`mobile-nav__menu container ${isOpen ? "open" : "closed"}`}
       >
-        <li>
-          <a href="#">About Us</a>
-        </li>
-        <li>
-          <a href="#">How It Works</a>
-        </li>
-        <li>
-          <a href="#">Pricing</a>
-        </li>
-        <li>
-          <a href="#">FAQs</a>
-        </li>
+        {links.map((link, i) => (
+          <li
+            key={link.name + i}
+            className="anim-fade-in-right"
+            style={{ "--_sequence": i + 1 } as React.CSSProperties}
+          >
+            <a href={`#${link.id}`} onClick={() => setIsOpen(false)}>
+              {link.name}
+            </a>
+          </li>
+        ))}
         <ul className="mobile-nav__buttons">
           <li>
             <button type="button" className="btn">

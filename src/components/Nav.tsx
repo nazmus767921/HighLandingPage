@@ -1,27 +1,31 @@
 import logo from "@assets/Logotype/LogoBlack.png";
 import "@styles/nav.scss";
+import { useMemo } from "react";
 import { sectionIds } from "src/App";
 import MobileNav from "./shared/MobileNav";
 
 const Nav = () => {
-  const links = [
-    {
-      name: "About Us",
-      id: sectionIds.aboutUs,
-    },
-    {
-      name: "How It Works",
-      id: sectionIds.howItWorks,
-    },
-    {
-      name: "Pricing",
-      id: sectionIds.pricing,
-    },
-    {
-      name: "FAQs",
-      id: sectionIds.faq,
-    },
-  ];
+  const links = useMemo(
+    () => [
+      {
+        name: "About Us",
+        id: sectionIds.aboutUs,
+      },
+      {
+        name: "How It Works",
+        id: sectionIds.howItWorks,
+      },
+      {
+        name: "Pricing",
+        id: sectionIds.pricing,
+      },
+      {
+        name: "FAQs",
+        id: sectionIds.faq,
+      },
+    ],
+    []
+  );
 
   return (
     <nav id="nav" className="navbar container">
