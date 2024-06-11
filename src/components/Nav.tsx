@@ -31,19 +31,29 @@ const Nav = () => {
       {/* Menu */}
       <ul className="navbar__menu">
         {links.map((link, i) => (
-          <li key={link.name + i}>
+          <li
+            key={link.name + i}
+            className="anim-fade-in-right"
+            style={{ "--_sequence": i + 1 } as React.CSSProperties}
+          >
             <a href={`#${link.id}`}>{link.name}</a>
           </li>
         ))}
       </ul>
       {/* Buttons */}
       <ul className="navbar__buttons">
-        <li>
+        <li
+          className="anim-fade-in-left"
+          style={{ "--_sequence": 1 } as React.CSSProperties}
+        >
           <button type="button" className="btn">
             Login
           </button>
         </li>
-        <li>
+        <li
+          className="anim-fade-in-left"
+          style={{ "--_sequence": 0 } as React.CSSProperties}
+        >
           <button type="button" className="btn btn--primary">
             Sign Up
           </button>

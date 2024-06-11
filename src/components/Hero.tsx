@@ -26,7 +26,7 @@ const logos = [
 const Hero = () => {
   return (
     <section id={sectionIds.hero} className="home__hero container">
-      <article className="home__hero-content">
+      <article className="home__hero-content anim-slide-right">
         <section className="main-content">
           <h1 className="title">
             Always&nbsp;Track & Analyze Your Business Statistics To Succeed.
@@ -54,7 +54,7 @@ const Hero = () => {
           ))}
         </ul>
       </article>
-      <div className="home__hero-image image-displacement-end-2">
+      <div className="home__hero-image image-displacement-end-2 anim-slide-left">
         <img src={heroImage} alt="hero image" />
       </div>
     </section>
