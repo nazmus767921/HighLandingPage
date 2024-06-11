@@ -4,6 +4,12 @@
   width: 100%;
   display: flex;
 
+  *,
+  *::before,
+  *::after {
+    transition: all 350ms var(--ease-out-expo);
+  }
+
   .hamburger {
     --_size: 4rem;
     --_bar-height: 0.3rem;
